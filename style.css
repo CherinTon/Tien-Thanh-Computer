@@ -1,0 +1,373 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+/* <uniquifier>: Use a uniquifier for the class name
+<weight>: Use a value from 200 to 1000 */
+
+html {
+    font-size: 62.5%; /* Dùng đơn vị Rem: 1rem= 10px */
+    font-family: "Inter Tight", sans-serif;
+    font-optical-sizing: auto;
+    text-rendering: optimizeSpeed; /* Tối ưu tối độ hiển thị chữ */
+    font-weight: 400;
+}
+/* System Fonts with system-ui 
+body {
+    font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  }
+*/
+/* Tuỳ biến thanh cuộn scrollBar */
+/* width */
+html,
+body {
+    /* overflow: overlay; */
+}
+
+::-webkit-scrollbar {
+    border-radius: 0;
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(22, 24, 35, 0.2);
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, 0);
+}
+/* End Scroll Bar */
+
+.home-header {
+    display: flex;
+    height: 60px;
+    justify-content: space-between;
+}
+
+.header {
+}
+.row-header {
+    display: flex;
+    position: relative;
+    width: var(--max-width-pc);
+    margin: 0 auto;
+    /* align-content: center; */
+    /* padding: 0 10Px; */
+    background-color: antiquewhite;
+}
+.Left-header {
+    /* position: absolute; */
+    display: inline-block;
+}
+
+.menu-title {
+    display: flex;
+    position: relative;
+    /* top: 30px; */
+    width: 240px;
+    height: 40px;
+    margin: 10px;
+    font-size: 1.5rem;
+    /* padding: 10px 35px 10px 45px; */
+    background-color: rgb(185, 20, 20);
+    border-radius: 5px;
+    color: #fff;
+}
+.menu-title:hover {
+    /* height: 350px; */
+    font-weight: bold;
+    cursor: pointer;
+}
+.menu-list-icon1 {
+    position: absolute;
+    top: 10px;
+    left: var(--align-icon);
+    font-size: var(--font-size-icon);
+}
+.menu-list-icon2 {
+    position: absolute;
+    top: 10px;
+    right: var(--align-icon);
+    font-size: var(--font-size-icon);
+}
+.menu-text {
+    display: flex;
+    position: absolute;
+    margin: auto;
+    top: 10px;
+    right: 40px;
+    /* left: calc(100% - (var(--align-icon)); */
+    /* justify-content: center;
+    text-align: center; */
+}
+
+.menu-title:hover > .sub-menu {
+    display: block;
+    width: 240px;
+    /* height: 300px; */
+    background-color: #eee;
+}
+.menu-title li {
+    position: relative;
+}
+
+.sub-menu li:hover > .sub-menu {
+    display: block;
+}
+
+.sub-menu {
+    position: absolute;
+    width: 240px;
+    top: 40px;
+    left: 0;
+    display: none;
+    /* background-color: #ec9a9a;     màu nền menu list */
+    /* margin: 10px 0px 0px -25px; */
+    border-radius: 5px;
+}
+.sub-menu a {
+    color: #000; /* màu chữ */
+    /* width: 100%;    với display= inline-block*/
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 500;
+    padding: 10px 5px 10px 40px;
+    border-bottom: 1px solid #ccc;
+}
+.sub-menu > li:last-child > a {
+    border-bottom: none;
+}
+.sub-menu > li {
+}
+
+.sub-menu li:hover {
+    background-color: var(--hover-color);
+    /* flex-shrink: ; */
+    flex-basis: auto;
+}
+
+.sub-menu .sub-menu {
+    left: 100%;
+    top: 0;
+    display: none;
+    background-color: #eee;
+} /*   CSS menu cấp 3 */
+
+.row-header {
+    display: flex;
+    /* flex-direction: column; */
+}
+
+.main-header {
+    width: var(--width-search);
+    margin-left: var(--height-search);
+}
+.search {
+    position: relative;
+    display: inline-block;
+    margin: 10px 20px 10px 0;
+    width: var(--width-search);
+    height: var(--height-search);
+    border: 4px solid #f00;
+    border-radius: 25px;
+    z-index: 999;
+}
+.search-box {
+    width: calc(var(--width-search) - 3 * var(--border-search));
+    /* display: block; */
+    position: absolute;
+}
+#text-search {
+    position: absolute;
+    width: calc(100% - var(--height-search));
+    margin: 0 20px;
+    font-size: 1.6rem;
+    line-height: 30px;
+    text-indent: 20px; /* Lùi lề chữ */
+    border: none;
+}
+.search-button {
+    width: var(--height-search);
+    height: var(--height-search);
+    position: absolute;
+    top: calc(-2 * var(--border-search));
+    right: calc(-2 * var(--border-search));
+
+    background-color: #cff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.fa-magnifying-glass {
+    position: absolute;
+    font-size: 2rem;
+    /* line-height: 30px; */
+    margin: auto;
+    color: #f00;
+    /* padding: 10px; */
+    left: 25%;
+    top: 25%;
+}
+.fa-magnifying-glass:hover {
+    font-size: 2.3rem;
+}
+
+.right-header {
+    position: absolute;
+    margin: 10px 25px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    line-height: 40px;
+    right: 0;
+}
+/* Build PC   */
+.user,
+.cart,
+.build-pc {
+    /* display: inline; */
+    position: relative;
+    /* top: 10px; */
+    color: #000;
+    height: 40px;
+    margin-right: 15px;
+}
+.fa-cart-shopping,
+.fa-house-user,
+.fa-kaaba {
+    font-size: 2rem;
+    /* margin: 0 5px; */
+    /* display: inline; */
+}
+
+/* .user {
+    width: 60px;
+} */
+.user-text,
+.cart-text,
+.build-text {
+    font-size: 1.5rem;
+    display: inline;
+}
+
+a:hover {
+    background-color: var(--hover-color);
+}
+.right-header a:last-child {
+    margin-right: 0;
+}
+
+.ds-dangnhap {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    width: 200px;
+    border: #ccc 2px solid;
+    border-radius: 5px;
+    /* transition: display 1s; */
+    display: none;
+}
+.user:hover > .ds-dangnhap {
+    display: block;
+}
+.ds-dangnhap li {
+    color: #000; /* màu chữ */
+    /* width: 100%;    với display= inline-block*/
+    display: flex;
+    font-size: 1.4rem;
+    font-weight: 500;
+    padding: 16px;
+    background-color: #fff;
+    /* margin: auto; */
+    /* align-items: center;
+    align-content: center; */
+    border-bottom: 1px solid #ccc;
+}
+.ds-dangnhap > li:last-child > a {
+    border-bottom: none;
+}
+.ds-dangnhap li:hover {
+    background-color: var(--hover-color);
+    /* flex-shrink: ; */
+    flex-basis: auto;
+}
+
+.form-account {
+    display: none;
+}
+
+.form-login {
+}
+
+.banner {
+    width: 99vw;
+    background-color: #eee;
+    text-align: center;
+}
+.swipe-banner {
+    margin: 12px;
+    display: none;
+    /* height: auto; */
+}
+
+.container {
+    max-width: var(--max-width-pc);
+    padding: 10px;
+    margin: 0 auto;
+}
+.homepage-products {
+    background: url("https://kccshop.vn/static/assets/102022/images/static-collection-bg-2.jpg")
+        center / cover no-repeat content-box;
+    background-color: #ccc;
+    /* width: 99vw; */
+    height: 1055.47px;
+}
+
+.modal,
+.overlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+}
+.overlay {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.modal .modal-content {
+    /* position: absolute; */
+}
+.modal-content {
+    position: relative;
+    margin: auto;
+    z-index: 1;
+}
+
+.modal .Close-btn {
+    position: absolute;
+    right: 0;
+    top: 25px;
+    padding: 5px;
+    font-size: 22px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    background-color: #f00;
+    color: #fff;
+    cursor: pointer;
+}
+
+.footer-shop-cpr {
+    display: none;
+}
+@media print {
+    body {
+        print-color-adjust: exact !important;
+        -webkit-print-color-adjust: exact !important;
+    }
+}

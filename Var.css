@@ -1,0 +1,9 @@
+:root {
+    --width-search: 800px;
+    --height-search: 40px;
+    --hover-color: #f37777;
+    --border-search: 2px;
+    --font-size-icon: 1.6rem;
+    --align-icon: 20px;
+    --max-width-pc: 1600px;
+}
